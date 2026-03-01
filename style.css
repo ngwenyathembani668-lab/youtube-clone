@@ -233,7 +233,16 @@ footer div {
 }
 
 
-/* video section!! */
+/* video section/ card!! */
+.card {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 6px;
+    border-radius: 14px;
+}
+
 .video-section {
     width: 90%;
     gap: 2%;
@@ -243,33 +252,30 @@ footer div {
     flex-wrap: wrap;
 }
 
-.video-container {
-    width: 32%;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    border-radius: 14px;
-}
-
-.video-container:hover {
-    background-color: #F2F2F2;
-    transition: 0.9s ease;
-}
-
-.top video {
+.video img {
     width: 100%;
     border-radius: 14px;
 }
 
-.middle {
+.video-info {
     display: flex;
     justify-content: space-between;
 }
 
-.profile-img img {
+.pic img {
     width: 40px;
-    border-radius: 100%; 
+    border-radius: 100%;
     margin-top: 10px;
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.video-title span {
+    font-size: 0.78rem;
+    color: #60646E;
+    margin: 0px 10px;
 }
 
 .video-title p{
@@ -277,15 +283,26 @@ footer div {
     margin: 8px 10px 8px 10px;
 }
 
-.video-options {
-    margin-top: 10px;
+.card:hover {
+    background-color: #F2F2F2;
+    transition: 0.9s ease;
 }
 
-.video-details {
-    padding: 8px 50px;
+/* hover effects for the video */
+.card video {
+  display: none;
+  width: 100%;
+  border-radius: 14px;
+  /* height: auto; */
+}
+.video:hover img {
+  display: none;
+  border-radius: 14px;
+}
+.card:hover video {
+  display: block;
 }
 
-.video-details p {
-    font-size: 0.78rem;
-    color: #60646E;
+.pic img {
+    display: block;
 }
