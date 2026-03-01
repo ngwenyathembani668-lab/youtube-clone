@@ -231,34 +231,3 @@ footer div {
     font-size: 0.95rem;
     margin-bottom: 5px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navigation styles! */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 56px;
-    width: 100%;
-}
-.logo svg {
-    margin-bottom: 10px;
-}
-#yt-logo {
-    width: 100px;
-    height: 50px;
-}
-.profile img {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-}
-
