@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.4s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Login Container */
+.login-container {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 60px 50px;
+    max-width: 420px;
+    width: 100%;
+    animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .login-container {
+    background-color: #212121;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.logo-section h1 {
+    font-size: 2.5rem;
+    color: #ff0033;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+body.dark-mode .logo-section h1 {
+    color: #ff5555;
+}
+
+.logo-section p {
+    color: #60646E;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+body.dark-mode .logo-section p {
+    color: #aaa4a4;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #030303;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+}
+
+body.dark-mode .form-group label {
+    color: #ffffff;
+}
+
+/* Input Styling */
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-family: "Roboto", sans-serif;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.8px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+    transform: translateY(-2px);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+body.dark-mode .form-group input {
+    background-color: #333;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .form-group input::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode .form-group input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+/* Error Message */
+.error-message {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    display: none;
+    animation: shake 0.4s cubic-bezier(0.36, 0, 0.66, -0.56);
+    font-weight: 500;
+}
+
+body.dark-mode .error-message {
+    color: #ff6b6b;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-8px);
+    }
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.01rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.3px;
+    margin-top: 35px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.45);
+}
+
+.login-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.35);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background-color: #F2F2F2;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #030303;
+}
+
+.theme-toggle:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1) rotate(20deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #333;
+    color: #ffcd3c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: #444;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Info Text */
+.info-text {
+    text-align: center;
+    color: #60646E;
+    font-size: 0.85rem;
+    margin-top: 25px;
+    line-height: 1.5;
+}
+
+body.dark-mode .info-text {
+    color: #aaa4a4;
+}
+
+.info-text p {
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 45px 30px;
+        margin: 20px;
+        max-width: 100%;
+    }
+
+    .logo-section {
+        margin-bottom: 35px;
+    }
+
+    .logo-section h1 {
+        font-size: 2rem;
+    }
+
+    .form-group input {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    .login-btn {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .login-container {
+        padding: 35px 20px;
+    }
+
+    .logo-section h1 {
+        font-size: 1.7rem;
+    }
+
+    .logo-section p {
+        font-size: 0.85rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 11px 14px;
+        font-size: 15px;
+    }
+
+    .login-btn {
+        margin-top: 25px;
+        padding: 11px;
+        font-size: 0.9rem;
+    }
+}
