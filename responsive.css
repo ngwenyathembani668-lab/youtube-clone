@@ -1,13 +1,211 @@
+/* tablet styles!! */
 @media (max-width: 1024px) {
-    nav {
+    nav .full-nav {
         width: 100%;
     }
 
     main {
         width: 100%;
+        display: flex;
+        height: 100%;
+    }
+
+    .video-section {
+        width: 93%;
+        padding: 20px 20px;
+    }
+
+    .card {
+        width: 45%;
     }
 
     .side-bar {
         display: none;
+        position: fixed;
+        left: 0;
+        top: 56px;
+        width: 30%;
+        height: calc(100vh - 56px);
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .side-bar.active {
+        display: flex;
+    }
+
+    .responsive-side-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 10%;
+        padding: 20px;
+    }
+
+    .responsive-side-bar p {
+        font-size: 0.6rem;
+    }
+
+    .side-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 15px;
+    }
+
+    .profile {
+        padding-left: 1.4%;
+    }
+
+    .dark-yt-logo svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .search-bar input {
+        width: 160px;
+    }
+
+    .create-btn {
+        width: 80px;
+        padding: 8px;
+    }
+
+    .create-btn p {
+        font-size: 0.6rem;
+    }
+
+    .bell-btn {
+        padding: 8px;
+    }
+
+    .pfp {
+        margin-right: 8px;
+    }
+
+    .responsive-nav {
+        display: none;
+    }
+}
+
+
+/* desktop styles!! */
+@media (min-width: 1200px) {
+    .responsive-side-bar {
+        display: none;
+    }
+
+    .side-bar {
+        width: 20%;
+    }
+
+    .search-bar {
+        width: 50%;
+    }
+
+    .logo {
+        margin-right: 10%;
+    }
+
+    .bell-btn {
+        padding: 13px;
+    }
+
+    .responsive-nav {
+        display: none;
+    }
+}
+
+
+/* mobile styles!! */
+@media (max-width: 480px) {
+    .side-bar {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 56px;
+        width: 30%;
+        height: calc(100vh - 56px);
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        width: 100vw;
+        display: flex;
+        padding: 0 8px;
+        justify-content: space-between;
+    }
+
+    .side-bar.active {
+        display: flex;
+    }
+
+    .search-bar input, .search-btn, .mic-btn {
+        display: none;
+    }
+
+    .responsive-side-bar {
+        display: none;
+    }
+
+    main {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /* padding: 0px 1% 0px 5%; */
+        /* justify-content: center; */
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .card {
+        width: 98%;
+        margin-left: 2%;
+        /* flex-wrap: wrap; */
+    }
+
+    .pfp {
+        width: 15px;
+        height: 15px;
+    }
+
+    .theme-btn i {
+        font-size: 12px;
+    }
+
+    .theme-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    #yt-logo {
+        width: 65px;
+    }
+
+    .profile {
+        gap: 10px;
+    }
+
+    .bell-btn {
+        display: none;
+    }
+
+    .side-bar {
+        width: 80%;
     }
 }
