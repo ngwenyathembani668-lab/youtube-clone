@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c93a9c9a9c.js" crossorigin="anonymous"></script>
+    <title>Login - YouTube Clone</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <button class="theme-toggle" id="login-theme-btn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="login-container">
+        <div class="logo-section">
+            <h1><i class="fa-brands fa-youtube"></i> YouTube</h1>
+            <p>Enter PIN to access</p>
+        </div>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="pin-input">PIN:</label>
+                <input
+                    type="password"
+                    id="pin-input"
+                    placeholder="Enter 4-digit PIN"
+                    maxlength="4"
+                    inputmode="numeric"
+                    required
+                />
+                <div class="error-message" id="error-message">Invalid PIN. Please try again.</div>
+            </div>
+
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="info-text">
+            <p>the pin is 1234</p>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle for login page
+        const loginThemeBtn = document.getElementById('login-theme-btn');
+        const loginThemeIcon = loginThemeBtn.querySelector('i');
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            loginThemeIcon.classList.remove('fa-moon');
+            loginThemeIcon.classList.add('fa-sun');
+        }
+
+        loginThemeBtn.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            if (isDark) {
+                loginThemeIcon.classList.remove('fa-moon');
+                loginThemeIcon.classList.add('fa-sun');
+            } else {
+                loginThemeIcon.classList.remove('fa-sun');
+                loginThemeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Login form handling
+        const loginForm = document.getElementById('login-form');
+        const pinInput = document.getElementById('pin-input');
+        const errorMessage = document.getElementById('error-message');
+        const CORRECT_PIN = '1234';
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const enteredPin = pinInput.value.trim();
+
+            if (enteredPin === CORRECT_PIN) {
+                localStorage.setItem('authenticated', 'true');
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.style.display = 'block';
+                pinInput.value = '';
+                pinInput.focus();
+            }
+        });
+
+        pinInput.addEventListener('focus', () => {
+            errorMessage.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
